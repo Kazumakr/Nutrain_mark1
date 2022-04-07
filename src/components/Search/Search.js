@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
 	Container,
 	SearchBar,
@@ -16,20 +16,6 @@ const Search = ({
 	myFoods,
 	setMyFoods,
 }) => {
-	// const [servingFDB, setServingFDB] = useState(100);
-	// const [servingRecipe, setServingRecipe] = useState(1);
-	// const AddFood = (e, { recipe }) => {
-	// 	e.preventDefault();
-	// 	console.log("serving", servingFDB);
-	// 	// const newFood = {
-	// 	// 	name: recipe.name,
-	// 	// 	calories: (recipe.calories * servingFDB) / 100,
-	// 	// 	carb: (recipe.carb * servingFDB) / 100,
-	// 	// 	protein: (recipe.protein * servingFDB) / 100,
-	// 	// 	fat: (recipe.fat * servingFDB) / 100,
-	// 	// };
-	// 	setMyFoods([...myFoods, recipe]);
-	// };
 	return (
 		<Container>
 			<SearchBar onSubmit={getSearch}>

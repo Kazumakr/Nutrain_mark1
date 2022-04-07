@@ -16,19 +16,8 @@ import {
 } from "./FoodTableStyle";
 import Accordion from "../Accordion/Accordion";
 
-const FoodTable = ({
-	myFoods,
-	setMyFoods,
-	setCalories,
-	setCarb,
-	setProtein,
-	setFat,
-}) => {
+const FoodTable = ({ myFoods, setMyFoods }) => {
 	const deleteFood = (index) => {
-		setCalories(0);
-		setCarb(0);
-		setProtein(0);
-		setFat(0);
 		setMyFoods((myFoods) => myFoods.filter((myFood, i) => i !== index));
 	};
 

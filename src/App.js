@@ -14,10 +14,6 @@ function App() {
 	const APP_KEY_FOOD_DATABASE = process.env.REACT_APP_APP_KEY_FOOD_DATABASE;
 	const [recipes, setRecipes] = useState([]);
 	const [search, setSearch] = useState("");
-	const [calories, setCalories] = useState(0);
-	const [carb, setCarb] = useState(0);
-	const [protein, setProtein] = useState(0);
-	const [fat, setFat] = useState(0);
 	const [show, setShow] = useState(false);
 
 	const [myFoods, setMyFoods] = useState(() => {
@@ -93,40 +89,15 @@ function App() {
 		<div className="App">
 			<Fragment>
 				<GlobalStyle />
-				<Header
-					setMyFoods={setMyFoods}
-					setCalories={setCalories}
-					setCarb={setCarb}
-					setProtein={setProtein}
-					setFat={setFat}
-					setShow={setShow}
-					show={show}
-				/>
+				<Header setMyFoods={setMyFoods} setShow={setShow} show={show} />
 				<Modal
 					show={show}
 					setShow={setShow}
 					myFoods={myFoods}
 					setMyFoods={setMyFoods}
 				/>
-				<Summary
-					myFoods={myFoods}
-					calories={calories}
-					setCalories={setCalories}
-					carb={carb}
-					setCarb={setCarb}
-					protein={protein}
-					setProtein={setProtein}
-					fat={fat}
-					setFat={setFat}
-				/>
-				<FoodTable
-					myFoods={myFoods}
-					setMyFoods={setMyFoods}
-					setCalories={setCalories}
-					setCarb={setCarb}
-					setProtein={setProtein}
-					setFat={setFat}
-				/>
+				<Summary myFoods={myFoods} />
+				<FoodTable myFoods={myFoods} setMyFoods={setMyFoods} />
 				<Search
 					search={search}
 					setSearch={setSearch}

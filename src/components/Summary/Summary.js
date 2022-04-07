@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
 	Container,
-	Wrapper,
 	Group,
 	LabelSection,
 	NumberSection,
@@ -11,24 +10,27 @@ import {
 	Unit,
 } from "./SummaryStyle";
 
-const Summary = ({
-	myFoods,
-	setCalories,
-	calories,
-	carb,
-	setCarb,
-	protein,
-	setProtein,
-	fat,
-	setFat,
-}) => {
+const Summary = ({ myFoods }) => {
+	const [calories, setCalories] = useState(0);
+	const [carb, setCarb] = useState(0);
+	const [protein, setProtein] = useState(0);
+	const [fat, setFat] = useState(0);
+
 	useEffect(() => {
-		myFoods.map((myFood) => {
-			setCalories(parseFloat(calories) + parseFloat(myFood.calories));
-			setCarb(parseFloat(carb) + parseFloat(myFood.carb));
-			setProtein(parseFloat(protein) + parseFloat(myFood.protein));
-			setFat(parseFloat(fat) + parseFloat(myFood.fat));
+		let caloriesSum = 0.0;
+		let carbSum = 0.0;
+		let proteinSum = 0.0;
+		let fatSum = 0.0;
+		myFoods.forEach((myFood) => {
+			caloriesSum += parseFloat(myFood.calories);
+			carbSum += parseFloat(myFood.carb);
+			proteinSum += parseFloat(myFood.protein);
+			fatSum += parseFloat(myFood.fat);
 		});
+		setCalories(caloriesSum);
+		setCarb(carbSum);
+		setProtein(proteinSum);
+		setFat(fatSum);
 	}, [myFoods]);
 	return (
 		<Container>

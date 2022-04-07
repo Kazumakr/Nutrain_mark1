@@ -1,21 +1,9 @@
 import React from "react";
 import { Container, Left, Right, Logo, Reset, Add } from "./HeaderStyle";
-const Header = ({
-	setMyFoods,
-	setCalories,
-	setCarb,
-	setProtein,
-	setFat,
-	show,
-	setShow,
-}) => {
+const Header = ({ setMyFoods, show, setShow }) => {
 	const resetLocalStorage = () => {
 		localStorage.removeItem("myFoods");
 		setMyFoods([]);
-		setCalories(0);
-		setCarb(0);
-		setProtein(0);
-		setFat(0);
 	};
 	return (
 		<Container>
