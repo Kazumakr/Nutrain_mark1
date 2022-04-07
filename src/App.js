@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Search from "./components/Search/Search";
 import Summary from "./components/Summary/Summary";
 import FoodTable from "./components/FoodTable/FoodTable";
+import Modal from "./components/Modal/Modal";
 import GlobalStyle from "./globalStyle";
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
 	const [carb, setCarb] = useState(0);
 	const [protein, setProtein] = useState(0);
 	const [fat, setFat] = useState(0);
+	const [show, setShow] = useState(false);
+
 	const [myFoods, setMyFoods] = useState(() => {
 		const savedMyFoods = localStorage.getItem("myFoods");
 		if (savedMyFoods) {
@@ -85,6 +88,14 @@ function App() {
 					setCarb={setCarb}
 					setProtein={setProtein}
 					setFat={setFat}
+					setShow={setShow}
+					show={show}
+				/>
+				<Modal
+					show={show}
+					setShow={setShow}
+					myFoods={myFoods}
+					setMyFoods={setMyFoods}
 				/>
 				<Summary
 					myFoods={myFoods}

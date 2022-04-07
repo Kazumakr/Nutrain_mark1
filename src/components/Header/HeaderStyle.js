@@ -31,3 +31,16 @@ export const Reset = styled.span`
 		font-size: 20px;
 	}
 `;
+export const Add = styled.span`
+	color: #4c50a1;
+	font-size: 24px;
+	margin-right: 25px;
+	&:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+	@media ${breakpoints.mobile} {
+		font-size: 20px;
+		margin-right: 15px;
+	}
+`;

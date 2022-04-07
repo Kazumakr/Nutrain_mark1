@@ -1,6 +1,14 @@
 import React from "react";
-import { Container, Left, Right, Logo, Reset } from "./HeaderStyle";
-const Header = ({ setMyFoods, setCalories, setCarb, setProtein, setFat }) => {
+import { Container, Left, Right, Logo, Reset, Add } from "./HeaderStyle";
+const Header = ({
+	setMyFoods,
+	setCalories,
+	setCarb,
+	setProtein,
+	setFat,
+	show,
+	setShow,
+}) => {
 	const resetLocalStorage = () => {
 		localStorage.removeItem("myFoods");
 		setMyFoods([]);
@@ -15,6 +23,7 @@ const Header = ({ setMyFoods, setCalories, setCarb, setProtein, setFat }) => {
 				<Logo>NUTRAIN</Logo>
 			</Left>
 			<Right>
+				<Add onClick={() => setShow(!show)}>Add</Add>
 				<Reset onClick={resetLocalStorage}>Reset</Reset>
 			</Right>
 		</Container>
