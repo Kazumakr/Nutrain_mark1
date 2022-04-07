@@ -1,23 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	Container,
 	SearchBar,
 	Input,
 	SearchButton,
 	Wrapper,
-	Card,
-	Img,
-	FoodName,
-	NutritionContainer,
-	Row,
-	LabelSection,
-	ColorBall,
-	Name,
-	NumberSection,
-	Number,
-	Unit,
-	Button,
 } from "./SearchStyle";
+import Card from "../Card/Card";
 
 const Search = ({
 	search,
@@ -27,6 +16,20 @@ const Search = ({
 	myFoods,
 	setMyFoods,
 }) => {
+	// const [servingFDB, setServingFDB] = useState(100);
+	// const [servingRecipe, setServingRecipe] = useState(1);
+	// const AddFood = (e, { recipe }) => {
+	// 	e.preventDefault();
+	// 	console.log("serving", servingFDB);
+	// 	// const newFood = {
+	// 	// 	name: recipe.name,
+	// 	// 	calories: (recipe.calories * servingFDB) / 100,
+	// 	// 	carb: (recipe.carb * servingFDB) / 100,
+	// 	// 	protein: (recipe.protein * servingFDB) / 100,
+	// 	// 	fat: (recipe.fat * servingFDB) / 100,
+	// 	// };
+	// 	setMyFoods([...myFoods, recipe]);
+	// };
 	return (
 		<Container>
 			<SearchBar onSubmit={getSearch}>
@@ -40,55 +43,12 @@ const Search = ({
 			</SearchBar>
 			<Wrapper>
 				{recipes.map((recipe, index) => (
-					<Card key={index}>
-						<Img src={recipe.image} />
-						<FoodName>{recipe.name}</FoodName>
-						<NutritionContainer>
-							<Row>
-								<LabelSection>
-									<ColorBall color={"blue"} />
-									<Name>Calories</Name>
-								</LabelSection>
-								<NumberSection>
-									<Number>{recipe.calories}</Number>
-									<Unit>kcal</Unit>
-								</NumberSection>
-							</Row>
-							<Row>
-								<LabelSection>
-									<ColorBall color={"#00ff19"} />
-									<Name>Carb</Name>
-								</LabelSection>
-								<NumberSection>
-									<Number>{recipe.carb}</Number>
-									<Unit>g</Unit>
-								</NumberSection>
-							</Row>
-							<Row>
-								<LabelSection>
-									<ColorBall color={"red"} />
-									<Name>Protein</Name>
-								</LabelSection>
-								<NumberSection>
-									<Number>{recipe.protein}</Number>
-									<Unit>g</Unit>
-								</NumberSection>
-							</Row>
-							<Row>
-								<LabelSection>
-									<ColorBall color={"orange"} />
-									<Name>Fat</Name>
-								</LabelSection>
-								<NumberSection>
-									<Number>{recipe.fat}</Number>
-									<Unit>g</Unit>
-								</NumberSection>
-							</Row>
-						</NutritionContainer>
-						<Button onClick={(event) => setMyFoods([...myFoods, recipe])}>
-							Add
-						</Button>
-					</Card>
+					<Card
+						recipe={recipe}
+						myFoods={myFoods}
+						setMyFoods={setMyFoods}
+						key={index}
+					/>
 				))}
 			</Wrapper>
 		</Container>

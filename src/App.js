@@ -44,9 +44,11 @@ function App() {
 		const data2 = await response2.json();
 		const items1 = data1.parsed;
 		const items2 = data2.hits;
+		console.log(items2);
 
 		items1.forEach((item) => {
 			const Recipe1 = {
+				type: "foodDB",
 				name: item.food.label,
 				image: item.food.image,
 				calories: item.food.nutrients.ENERC_KCAL,
@@ -59,12 +61,21 @@ function App() {
 		});
 		items2.forEach((item) => {
 			const Recipe2 = {
+				type: "recipe",
 				name: item.recipe.label,
 				image: item.recipe.image,
-				calories: parseFloat(item.recipe.calories.toFixed(1)),
-				carb: parseFloat(item.recipe.digest[1].total.toFixed(1)),
-				protein: parseFloat(item.recipe.digest[2].total.toFixed(1)),
-				fat: parseFloat(item.recipe.digest[0].total.toFixed(1)),
+				calories: parseFloat(item.recipe.calories / item.recipe.yield).toFixed(
+					1
+				),
+				carb: parseFloat(
+					item.recipe.digest[1].total / item.recipe.yield
+				).toFixed(1),
+				protein: parseFloat(
+					item.recipe.digest[2].total / item.recipe.yield
+				).toFixed(1),
+				fat: parseFloat(
+					item.recipe.digest[0].total / item.recipe.yield
+				).toFixed(1),
 			};
 			console.log("Recipe2", Recipe2);
 			results.push(Recipe2);

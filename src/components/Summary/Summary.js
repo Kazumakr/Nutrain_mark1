@@ -24,10 +24,10 @@ const Summary = ({
 }) => {
 	useEffect(() => {
 		myFoods.map((myFood) => {
-			setCalories(parseFloat(calories) + myFood.calories);
-			setCarb(parseFloat(carb) + myFood.carb);
-			setProtein(parseFloat(protein) + myFood.protein);
-			setFat(parseFloat(fat) + myFood.fat);
+			setCalories(parseFloat(calories) + parseFloat(myFood.calories));
+			setCarb(parseFloat(carb) + parseFloat(myFood.carb));
+			setProtein(parseFloat(protein) + parseFloat(myFood.protein));
+			setFat(parseFloat(fat) + parseFloat(myFood.fat));
 		});
 	}, [myFoods]);
 	return (
