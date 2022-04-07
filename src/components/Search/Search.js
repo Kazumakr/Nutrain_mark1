@@ -41,8 +41,8 @@ const Search = ({
 			<Wrapper>
 				{recipes.map((recipe, index) => (
 					<Card key={index}>
-						<Img src={recipe.recipe.image} />
-						<FoodName>{recipe.recipe.label}</FoodName>
+						<Img src={recipe.image} />
+						<FoodName>{recipe.name}</FoodName>
 						<NutritionContainer>
 							<Row>
 								<LabelSection>
@@ -50,7 +50,7 @@ const Search = ({
 									<Name>Calories</Name>
 								</LabelSection>
 								<NumberSection>
-									<Number>{recipe.recipe.calories.toFixed(1)}</Number>
+									<Number>{recipe.calories}</Number>
 									<Unit>kcal</Unit>
 								</NumberSection>
 							</Row>
@@ -60,7 +60,7 @@ const Search = ({
 									<Name>Carb</Name>
 								</LabelSection>
 								<NumberSection>
-									<Number>{recipe.recipe.digest[1].total.toFixed(1)}</Number>
+									<Number>{recipe.carb}</Number>
 									<Unit>g</Unit>
 								</NumberSection>
 							</Row>
@@ -70,7 +70,7 @@ const Search = ({
 									<Name>Protein</Name>
 								</LabelSection>
 								<NumberSection>
-									<Number>{recipe.recipe.digest[2].total.toFixed(1)}</Number>
+									<Number>{recipe.protein}</Number>
 									<Unit>g</Unit>
 								</NumberSection>
 							</Row>
@@ -80,7 +80,7 @@ const Search = ({
 									<Name>Fat</Name>
 								</LabelSection>
 								<NumberSection>
-									<Number>{recipe.recipe.digest[0].total.toFixed(1)}</Number>
+									<Number>{recipe.fat}</Number>
 									<Unit>g</Unit>
 								</NumberSection>
 							</Row>

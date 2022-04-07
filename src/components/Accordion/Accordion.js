@@ -20,7 +20,7 @@ const Accordion = ({ myFood, index, deleteFood }) => {
 				className="accordion-title"
 				onClick={() => setIsActive(!isActive)}
 			>
-				<Name>{myFood.recipe.label}</Name>
+				<Name>{myFood.name}</Name>
 				<Cursol>{isActive ? "▲" : "▼"}</Cursol>
 			</FoodNameContainer>
 			{isActive && (
@@ -28,28 +28,28 @@ const Accordion = ({ myFood, index, deleteFood }) => {
 					<Group>
 						<Nutrition>Calories</Nutrition>
 						<div>
-							<Number>{myFood.recipe.calories.toFixed(1)}</Number>
+							<Number>{myFood.calories}</Number>
 							<Unit>kcal</Unit>
 						</div>
 					</Group>
 					<Group>
 						<Nutrition>Carb</Nutrition>
 						<div>
-							<Number>{myFood.recipe.digest[1].total.toFixed(1)}</Number>
+							<Number>{myFood.carb}</Number>
 							<Unit>g</Unit>
 						</div>
 					</Group>
 					<Group>
 						<Nutrition>Protein</Nutrition>
 						<div>
-							<Number>{myFood.recipe.digest[2].total.toFixed(1)}</Number>
+							<Number>{myFood.protein}</Number>
 							<Unit>g</Unit>
 						</div>
 					</Group>
 					<Group>
 						<Nutrition>Fat</Nutrition>
 						<div>
-							<Number>{myFood.recipe.digest[0].total.toFixed(1)}</Number>
+							<Number>{myFood.fat}</Number>
 							<Unit>g</Unit>
 						</div>
 					</Group>

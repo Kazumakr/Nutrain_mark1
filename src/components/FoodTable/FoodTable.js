@@ -46,11 +46,11 @@ const FoodTable = ({
 				{myFoods.length === 0 && <p>No Food Data</p>}
 				{myFoods.map((myFood, index) => (
 					<Row key={index}>
-						<Col1>{myFood.recipe.label}</Col1>
-						<Col2>{myFood.recipe.calories.toFixed(1)}</Col2>
-						<Col3>{myFood.recipe.digest[1].total.toFixed(1)}</Col3>
-						<Col4>{myFood.recipe.digest[2].total.toFixed(1)}</Col4>
-						<Col5>{myFood.recipe.digest[0].total.toFixed(1)}</Col5>
+						<Col1>{myFood.name}</Col1>
+						<Col2>{myFood.calories}</Col2>
+						<Col3>{myFood.carb}</Col3>
+						<Col4>{myFood.protein}</Col4>
+						<Col5>{myFood.fat}</Col5>
 						<Col6>
 							<Trash onClick={() => deleteFood(index)} />
 						</Col6>
