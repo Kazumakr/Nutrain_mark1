@@ -12,20 +12,18 @@ export const Container = styled.div`
 export const Table = styled.ul`
 	margin: 10px auto;
 	padding: 0;
+	@media ${breakpoints.mobile} {
+		display: none;
+	}
 `;
 export const Header = styled.li`
-	/* background-color: #95a5a6; */
 	font-size: 14px;
 	letter-spacing: 0.03em;
 	display: flex;
 	justify-content: space-between;
-	/* border-radius: 3px; */
 	padding: 20px 30px;
 	margin-bottom: 25px;
 	border-bottom: 1px solid black;
-	/* @media ${breakpoints.tablet} {
-		font-size: 24px;
-	} */
 `;
 
 export const Row = styled.li`
@@ -62,4 +60,23 @@ export const Trash = styled(FaTrash)`
 		cursor: pointer;
 		opacity: 0.7;
 	}
+	@media ${breakpoints.mobile} {
+		align-self: flex-end;
+	}
+`;
+
+export const MobileTable = styled.div`
+	display: none;
+	@media ${breakpoints.mobile} {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+`;
+
+export const MobileHeader = styled.div`
+	border-bottom: 1px solid black;
+	width: 90%;
+	margin: 10px 0;
+	padding: 10px 0;
 `;

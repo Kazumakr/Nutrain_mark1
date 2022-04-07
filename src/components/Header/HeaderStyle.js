@@ -6,9 +6,6 @@ export const Container = styled.div`
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
-	/* position: sticky;
-	top: 0;
-	z-index: 2; */
 	background-color: white;
 	@media ${breakpoints.laptop} {
 		justify-content: space-between;

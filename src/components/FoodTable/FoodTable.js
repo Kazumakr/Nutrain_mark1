@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	Container,
 	Header,
@@ -11,7 +11,10 @@ import {
 	Col5,
 	Col6,
 	Trash,
+	MobileTable,
+	MobileHeader,
 } from "./FoodTableStyle";
+import Accordion from "../Accordion/Accordion";
 
 const FoodTable = ({
 	myFoods,
@@ -28,6 +31,7 @@ const FoodTable = ({
 		setFat(0);
 		setMyFoods((myFoods) => myFoods.filter((myFood, i) => i !== index));
 	};
+
 	return (
 		<Container>
 			<Table>
@@ -39,7 +43,7 @@ const FoodTable = ({
 					<Col5>Fat(g)</Col5>
 					<Col6></Col6>
 				</Header>
-				{myFoods.length == 0 && <p>No Food Data</p>}
+				{myFoods.length === 0 && <p>No Food Data</p>}
 				{myFoods.map((myFood, index) => (
 					<Row key={index}>
 						<Col1>{myFood.recipe.label}</Col1>
@@ -53,6 +57,18 @@ const FoodTable = ({
 					</Row>
 				))}
 			</Table>
+			<MobileTable>
+				<MobileHeader>Food</MobileHeader>
+				{myFoods.length === 0 && <p>No Food Data</p>}
+				{myFoods.map((myFood, index) => (
+					<Accordion
+						myFood={myFood}
+						index={index}
+						deleteFood={deleteFood}
+						key={index}
+					/>
+				))}
+			</MobileTable>
 		</Container>
 	);
 };

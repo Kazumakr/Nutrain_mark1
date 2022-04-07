@@ -3,7 +3,6 @@ import { breakpoints } from "../../breakpoints";
 export const Container = styled.div`
 	max-width: 1000px;
 	height: 200px;
-	/* text-align: center; */
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-around;

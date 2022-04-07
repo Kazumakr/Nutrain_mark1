@@ -33,15 +33,12 @@ function App() {
 	}, [myFoods]);
 
 	useEffect(() => {
-		console.log(BASE_URL);
 		getRecipes();
 	}, [query]);
-	console.log("myFoods", myFoods);
 
 	const getRecipes = async () => {
 		const response = await fetch(BASE_URL);
 		const data = await response.json();
-		console.log(data.hits);
 		setRecipes(data.hits);
 	};
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
 	Container,
 	Wrapper,
@@ -22,20 +22,7 @@ const Summary = ({
 	fat,
 	setFat,
 }) => {
-	// const [calories, setCalories] = useState(0);
-	// const [carb, setCarb] = useState(0);
-	// const [protein, setProtein] = useState(0);
-	// const [fat, setFat] = useState(0);
-	// let calories=0
-	// let carb=0
-	// let protein=0
-	// let fat=0
-
 	useEffect(() => {
-		// setCalories(0);
-		// setCarb(0);
-		// setProtein(0);
-		// setFat(0);
 		myFoods.map((myFood) => {
 			setCalories(
 				parseFloat(calories) + parseFloat(myFood.recipe.calories.toFixed(1))
@@ -50,12 +37,10 @@ const Summary = ({
 			setFat(
 				parseFloat(fat) + parseFloat(myFood.recipe.digest[0].total.toFixed(1))
 			);
-			// calories+=myFood.recipe.calories.toFixed(1)
 		});
 	}, [myFoods]);
 	return (
 		<Container>
-			{/* <Wrapper> */}
 			<Group>
 				<LabelSection>
 					<ColorBall color={"blue"} />
@@ -96,7 +81,6 @@ const Summary = ({
 					<Unit>g</Unit>
 				</NumberSection>
 			</Group>
-			{/* </Wrapper> */}
 		</Container>
 	);
 };
