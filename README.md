@@ -78,8 +78,11 @@ And this was my first project since react18 was released, so I learned the synta
 ## Usage
 
 ### Food Data Search/Recipe search
+![search](https://user-images.githubusercontent.com/67501734/162380973-25df9306-244d-40e1-8224-62b68cd73eb3.gif)
 
 ### Store Data to LocalStorage
+
+![storedata](https://user-images.githubusercontent.com/67501734/162380924-09d4c6b0-ee20-461e-9710-3a57d16cf1e6.gif)
 
 ### Delete data from LocalStorage
 
@@ -89,7 +92,11 @@ And this was my first project since react18 was released, so I learned the synta
 
 ### Manual registration of food data
 
+![manual_add](https://user-images.githubusercontent.com/67501734/162380963-3595e473-7a3f-4eba-9b73-741ee678bc52.gif)
+
 ### Data Reset (Remove all data from LocalStorage)
+
+![reset](https://user-images.githubusercontent.com/67501734/162381043-5d512a20-0fca-4467-9ad2-01346b68f422.gif)
 
 ## License
 
