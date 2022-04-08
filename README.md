@@ -7,7 +7,7 @@ You can search for foods from the food database and get accurate nutrients.
 
 Project Link: [https://startling-puppy-43815a.netlify.app/]
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [Description](#description)
 - [Features](#features)
@@ -82,6 +82,8 @@ And this was my first project since react18 was released, so I learned the synta
 ### Store Data to LocalStorage
 
 ### Delete data from LocalStorage
+
+![delete](https://user-images.githubusercontent.com/67501734/162380631-ba79f4c2-97ea-42b1-a1ab-23dc0ba0c9b0.gif)
 
 ### Change Serving Amounts
 
