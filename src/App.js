@@ -40,8 +40,6 @@ function App() {
 		const data2 = await response2.json();
 		const items1 = data1.parsed;
 		const items2 = data2.hits;
-		console.log(items2);
-
 		items1.forEach((item) => {
 			const Recipe1 = {
 				type: "foodDB",
@@ -52,7 +50,6 @@ function App() {
 				protein: item.food.nutrients.PROCNT,
 				fat: item.food.nutrients.FAT,
 			};
-			console.log("Recipe1", Recipe1);
 			results.push(Recipe1);
 		});
 		items2.forEach((item) => {
@@ -60,22 +57,23 @@ function App() {
 				type: "recipe",
 				name: item.recipe.label,
 				image: item.recipe.image,
-				calories: parseFloat(item.recipe.calories / item.recipe.yield).toFixed(
-					1
-				),
-				carb: parseFloat(
-					item.recipe.digest[1].total / item.recipe.yield
-				).toFixed(1),
-				protein: parseFloat(
-					item.recipe.digest[2].total / item.recipe.yield
-				).toFixed(1),
-				fat: parseFloat(
-					item.recipe.digest[0].total / item.recipe.yield
-				).toFixed(1),
+				calories:
+					Math.round((item.recipe.calories / item.recipe.yield) * 10) / 10,
+				carb:
+					Math.round((item.recipe.digest[1].total / item.recipe.yield) * 10) /
+					10,
+				protein:
+					Math.round((item.recipe.digest[2].total / item.recipe.yield) * 10) /
+					10,
+				fat:
+					Math.round((item.recipe.digest[0].total / item.recipe.yield) * 10) /
+					10,
 			};
-			console.log("Recipe2", Recipe2);
+			// Math.round(number * 10) / 10;
+			// console.log("Recipe2", Recipe2);
 			results.push(Recipe2);
 		});
+		console.log(results);
 		setRecipes(results);
 	};
 

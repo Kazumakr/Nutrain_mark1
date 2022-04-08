@@ -22,15 +22,15 @@ const Summary = ({ myFoods }) => {
 		let proteinSum = 0.0;
 		let fatSum = 0.0;
 		myFoods.forEach((myFood) => {
-			caloriesSum += parseFloat(myFood.calories);
-			carbSum += parseFloat(myFood.carb);
-			proteinSum += parseFloat(myFood.protein);
-			fatSum += parseFloat(myFood.fat);
+			caloriesSum += myFood.calories;
+			carbSum += myFood.carb;
+			proteinSum += myFood.protein;
+			fatSum += myFood.fat;
 		});
-		setCalories(caloriesSum);
-		setCarb(carbSum);
-		setProtein(proteinSum);
-		setFat(fatSum);
+		setCalories(Math.round(caloriesSum * 10) / 10);
+		setCarb(Math.round(carbSum * 10) / 10);
+		setProtein(Math.round(proteinSum * 10) / 10);
+		setFat(Math.round(fatSum * 10) / 10);
 	}, [myFoods]);
 	return (
 		<Container>
@@ -40,7 +40,7 @@ const Summary = ({ myFoods }) => {
 					<Name>Calories</Name>
 				</LabelSection>
 				<NumberSection>
-					<Number>{calories.toFixed(1)}</Number>
+					<Number>{calories}</Number>
 					<Unit>kcal</Unit>
 				</NumberSection>
 			</Group>
@@ -50,7 +50,7 @@ const Summary = ({ myFoods }) => {
 					<Name>Carb</Name>
 				</LabelSection>
 				<NumberSection>
-					<Number>{carb.toFixed(1)}</Number>
+					<Number>{carb}</Number>
 					<Unit>g</Unit>
 				</NumberSection>
 			</Group>
@@ -60,7 +60,7 @@ const Summary = ({ myFoods }) => {
 					<Name>Protein</Name>
 				</LabelSection>
 				<NumberSection>
-					<Number>{protein.toFixed(1)}</Number>
+					<Number>{protein}</Number>
 					<Unit>g</Unit>
 				</NumberSection>
 			</Group>
@@ -70,7 +70,7 @@ const Summary = ({ myFoods }) => {
 					<Name>Fat</Name>
 				</LabelSection>
 				<NumberSection>
-					<Number>{fat.toFixed(1)}</Number>
+					<Number>{fat}</Number>
 					<Unit>g</Unit>
 				</NumberSection>
 			</Group>

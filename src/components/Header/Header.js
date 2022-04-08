@@ -8,7 +8,7 @@ const Header = ({ setMyFoods, show, setShow }) => {
 	return (
 		<Container>
 			<Left>
-				<Logo>NUTRAIN</Logo>
+				<Logo onClick={() => window.location.reload()}>NUTRAIN</Logo>
 			</Left>
 			<Right>
 				<Add onClick={() => setShow(!show)}>Add</Add>

@@ -16,6 +16,10 @@ export const Left = styled.div``;
 export const Right = styled.div``;
 export const Logo = styled.h1`
 	color: #4c50a1;
+	&:hover {
+		cursor: pointer;
+		opacity: 0.7;
+	}
 	@media ${breakpoints.mobile} {
 		font-size: 24px;
 	}

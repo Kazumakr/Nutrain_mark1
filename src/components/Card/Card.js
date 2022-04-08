@@ -81,13 +81,16 @@ const Card = ({ recipe, myFoods, setMyFoods }) => {
 					<Button
 						onClick={() => {
 							console.log("serving", servingFDB);
+							// Math.round(number * 10) / 10;
 
 							const newFood = {
 								name: recipe.name,
-								calories: ((recipe.calories * servingFDB) / 100).toFixed(1),
-								carb: ((recipe.carb * servingFDB) / 100).toFixed(1),
-								protein: ((recipe.protein * servingFDB) / 100).toFixed(1),
-								fat: ((recipe.fat * servingFDB) / 100).toFixed(1),
+								calories:
+									Math.round(((recipe.calories * servingFDB) / 100) * 10) / 10,
+								carb: Math.round(((recipe.carb * servingFDB) / 100) * 10) / 10,
+								protein:
+									Math.round(((recipe.protein * servingFDB) / 100) * 10) / 10,
+								fat: Math.round(((recipe.fat * servingFDB) / 100) * 10) / 10,
 							};
 							setMyFoods([...myFoods, newFood]);
 						}}
@@ -111,10 +114,10 @@ const Card = ({ recipe, myFoods, setMyFoods }) => {
 
 							const newFood = {
 								name: recipe.name,
-								calories: (recipe.calories * servingRecipe).toFixed(1),
-								carb: (recipe.carb * servingRecipe).toFixed(1),
-								protein: (recipe.protein * servingRecipe).toFixed(1),
-								fat: (recipe.fat * servingRecipe).toFixed(1),
+								calories: Math.round(recipe.calories * servingRecipe * 10) / 10,
+								carb: Math.round(recipe.calories * servingRecipe * 10) / 10,
+								protein: Math.round(recipe.calories * servingRecipe * 10) / 10,
+								fat: Math.round(recipe.calories * servingRecipe * 10) / 10,
 							};
 							setMyFoods([...myFoods, newFood]);
 						}}

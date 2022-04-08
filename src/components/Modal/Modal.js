@@ -26,6 +26,7 @@ const Modal = ({ show, setShow, myFoods, setMyFoods }) => {
 			protein: parseFloat(newProtein),
 			fat: parseFloat(newFat),
 		};
+		console.log("newFood", newFood);
 		setMyFoods([...myFoods, newFood]);
 		setShow(false);
 	};
