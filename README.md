@@ -3,6 +3,8 @@
 This application is to record and manage food nutrition.  
 You can search for foods from the food database and get accurate nutrients.
 
+<img width="1662" alt="nutrain_screenshot" src="https://user-images.githubusercontent.com/67501734/162377532-ad00a946-15be-4627-9c0b-eaf23e6bb90d.png">
+
 Project Link: [https://startling-puppy-43815a.netlify.app/]
 
 ## Table of Contents (Optional)
