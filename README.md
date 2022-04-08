@@ -1,4 +1,4 @@
-# Open Closet-Frontend
+# Nutrain_mark1
 
 This application is to record and manage food nutrition.  
 You can search for foods from the food database and get accurate nutrients.
