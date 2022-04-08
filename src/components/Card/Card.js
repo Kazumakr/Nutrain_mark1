@@ -80,9 +80,6 @@ const Card = ({ recipe, myFoods, setMyFoods }) => {
 					</ServingSection>
 					<Button
 						onClick={() => {
-							console.log("serving", servingFDB);
-							// Math.round(number * 10) / 10;
-
 							const newFood = {
 								name: recipe.name,
 								calories:
@@ -110,8 +107,6 @@ const Card = ({ recipe, myFoods, setMyFoods }) => {
 					</ServingSection>
 					<Button
 						onClick={() => {
-							console.log("serving", servingRecipe);
-
 							const newFood = {
 								name: recipe.name,
 								calories: Math.round(recipe.calories * servingRecipe * 10) / 10,

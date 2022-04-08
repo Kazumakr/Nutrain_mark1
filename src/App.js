@@ -69,11 +69,8 @@ function App() {
 					Math.round((item.recipe.digest[0].total / item.recipe.yield) * 10) /
 					10,
 			};
-			// Math.round(number * 10) / 10;
-			// console.log("Recipe2", Recipe2);
 			results.push(Recipe2);
 		});
-		console.log(results);
 		setRecipes(results);
 	};
 
@@ -84,29 +81,27 @@ function App() {
 	};
 
 	return (
-		<div className="App">
-			<Fragment>
-				<GlobalStyle />
-				<Header setMyFoods={setMyFoods} setShow={setShow} show={show} />
-				<Modal
-					show={show}
-					setShow={setShow}
-					myFoods={myFoods}
-					setMyFoods={setMyFoods}
-				/>
-				<Summary myFoods={myFoods} />
-				<FoodTable myFoods={myFoods} setMyFoods={setMyFoods} />
-				<Search
-					search={search}
-					setSearch={setSearch}
-					getSearch={getSearch}
-					recipes={recipes}
-					myFoods={myFoods}
-					setMyFoods={setMyFoods}
-				/>
-				<Footer />
-			</Fragment>
-		</div>
+		<Fragment>
+			<GlobalStyle />
+			<Header setMyFoods={setMyFoods} setShow={setShow} show={show} />
+			<Modal
+				show={show}
+				setShow={setShow}
+				myFoods={myFoods}
+				setMyFoods={setMyFoods}
+			/>
+			<Summary myFoods={myFoods} />
+			<FoodTable myFoods={myFoods} setMyFoods={setMyFoods} />
+			<Search
+				search={search}
+				setSearch={setSearch}
+				getSearch={getSearch}
+				recipes={recipes}
+				myFoods={myFoods}
+				setMyFoods={setMyFoods}
+			/>
+			<Footer />
+		</Fragment>
 	);
 }
 

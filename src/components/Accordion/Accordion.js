@@ -16,10 +16,7 @@ const Accordion = ({ myFood, index, deleteFood }) => {
 
 	return (
 		<MobileRow>
-			<FoodNameContainer
-				className="accordion-title"
-				onClick={() => setIsActive(!isActive)}
-			>
+			<FoodNameContainer onClick={() => setIsActive(!isActive)}>
 				<Name>{myFood.name}</Name>
 				<Cursol>{isActive ? "▲" : "▼"}</Cursol>
 			</FoodNameContainer>
