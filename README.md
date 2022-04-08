@@ -90,6 +90,8 @@ And this was my first project since react18 was released, so I learned the synta
 
 ### Change Serving Amounts
 
+![change_serving](https://user-images.githubusercontent.com/67501734/162381371-0cbb3ff0-d1f8-4a9a-b8ac-2a9638acfa43.gif)
+
 ### Manual registration of food data
 
 ![manual_add](https://user-images.githubusercontent.com/67501734/162380963-3595e473-7a3f-4eba-9b73-741ee678bc52.gif)
